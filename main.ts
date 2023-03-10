@@ -32,29 +32,29 @@ bluetooth.onUartDataReceived(serial.delimiters(Delimiters.SemiColon), function (
 })
 function traitemementMessage () {
     message = bluetooth.uartReadUntil(serial.delimiters(Delimiters.SemiColon))
-    if (message == "mousedown_haut") {
+    if (message == "down_haut") {
         basic.showString("T")
         moteur = 1
         tournerHoraire = 1
-    } else if (message == "mouseup_haut") {
+    } else if (message == "up_haut") {
         tournerHoraire = 0
-    } else if (message == "mousedown_bas") {
+    } else if (message == "down_bas") {
         basic.showString("T")
         moteur = 1
         tournerAntiHoraire = 1
-    } else if (message == "mouseup_bas") {
+    } else if (message == "up_bas") {
         tournerAntiHoraire = 0
-    } else if (message == "mousedown_droite") {
+    } else if (message == "down_droite") {
         basic.showString("R")
         moteur = 0
         tournerHoraire = 1
-    } else if (message == "mouseup_droite") {
+    } else if (message == "up_droite") {
         tournerHoraire = 0
-    } else if (message == "mousedown_gauche") {
+    } else if (message == "down_gauche") {
         basic.showString("R")
         moteur = 0
         tournerAntiHoraire = 1
-    } else if (message == "mouseup_gauche") {
+    } else if (message == "up_gauche") {
         tournerAntiHoraire = 0
     }
 }
